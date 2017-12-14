@@ -1,4 +1,29 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
+/* navbar */
+.navbar {
+    background-color:#4c66a4;
+    border-color: #4c66a4;
+    color:white;
+}
+
+ul.nav.navbar-nav .dropdown.open .dropdown-toggle{
+  color:#4c66a4;
+  background-color:#4c66a4;
+}
+
+.title{
+ color:white;
+ text-decoration:none;
+ font-size:30px;
+ font-weight:900;
+}
+
+.drop{
+ color:white;
+ font-size:18px;
+ } 
 
 body
 {
