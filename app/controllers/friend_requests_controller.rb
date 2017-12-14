@@ -1,5 +1,5 @@
 class FriendRequestsController < ApplicationController
-	before_action :set_friend_request, except: [:index, :create]
+	
 
 	def index
 		@incoming = FriendRequest.where(friend: current_user)
@@ -12,7 +12,7 @@ class FriendRequestsController < ApplicationController
 
 		if @friend_request.save
 			flash[:notice]="Friend request sent."
-			redirect_to root_path
+			redirect_to users_path
 		else
 			flash[:alert]="Friend request not sent."
 			redirect_to root_path
