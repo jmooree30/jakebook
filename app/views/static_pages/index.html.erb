@@ -4,4 +4,13 @@
 <%= render 'devise/registrations/new' %>
 <% end %>
 
+<% @all_posts.each do |f| %>
+<ul>
+		<%= f.user.name %>
+	<li>
+		<%= f.body %>
+	</li>
+</ul>
+<% end %>
+
 
