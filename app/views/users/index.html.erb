@@ -1,8 +1,9 @@
-<ul>
-  New friend requests
+
   <% @incoming.each do |user| %>
   <% @users.each do |f| %>
   <% if f.id == user.user.id %>
+  <ul>
+    New friend requests
   <li>
     <%= f.name %>
     <%= link_to "Accept request", friend_request_path(id: user), :method => :put %>
@@ -16,10 +17,10 @@
 	All users
   <% @users.each do |user| %>
   <% if user.id != current_user.id %>
-  <li><%= user.name %>
- <%= link_to "Add Friend", friend_requests_path(:friend_id => 2), :method => :post %></li>
+  <li>
+    <%= user.name %>
+ <%= link_to "Add Friend", friend_requests_path(:friend_id => user), method: :post %></li>
 </li>
    <% end %>
    <% end %>
-
  </ul>
