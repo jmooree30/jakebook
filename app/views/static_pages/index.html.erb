@@ -2,8 +2,7 @@
 <% if !user_signed_in? %>
 <%= render 'devise/sessions/new' %>
 <%= render 'devise/registrations/new' %>
-<% end %>
-
+<% else %>
 <% @all_posts.each do |f| %>
 <ul>
 		<%= f.user.name %>
@@ -12,5 +11,8 @@
 	</li>
 </ul>
 <% end %>
+<% end %>
+
+
 
 
