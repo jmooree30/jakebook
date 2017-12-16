@@ -5,10 +5,16 @@
     <%= f.submit "Create" %>
   <% end %>
 
-  <% @users_posts.each do |f| %>
-  <ul>
-  	<li>
-    <%= f.body %>
-    </li>
-  </ul>
-  <% end %>
+<% @posts.each do |post| %>
+<h4><%= post.body %><br>
+</h4>
+<%= link_to like_post_path(post), method: :put do %>
+Like
+<%= post.get_upvotes.size %>
+<% end %>
+
+<%= link_to dislike_post_path(post), method: :put do %>
+Dislike
+<%= post.get_downvotes.size %>
+<% end %>
+<% end %>

@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   def show 
   	@user = current_user
     @post = Post.new
-    @users_posts = current_user.posts.all
+    @posts = current_user.posts.all
   end 
 
   private

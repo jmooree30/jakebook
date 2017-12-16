@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'acts_as_votable', '~> 0.10.0'
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
 gem 'bootstrap-sass',          '3.3.7'

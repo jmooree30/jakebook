@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 	def index
-		@posts = Posts.all
+		@posts = Post.all
 	end 
 
 	def new 
@@ -17,15 +17,21 @@ class PostsController < ApplicationController
 		end 
 	end 
 
-	def show
-	end 
+	def upvote 
+		@post = Post.find(params[:id])
+		@post.upvote_by current_user
+		redirect_back fallback_location: root_path
+	end  
 
-	def destroy
-	end 
+	def downvote
+		@post = Post.find(params[:id])
+		@post.downvote_by current_user
+		redirect_back fallback_location: root_path
+	end
 
 	private
 
-  def post_params
-    params.require(:post).permit(:body)
-  end 
+	def post_params
+		params.require(:post).permit(:body)
+	end 
 end
