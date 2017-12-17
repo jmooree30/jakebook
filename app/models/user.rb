@@ -4,8 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable
 
-  has_attached_file :avatar, styles: { medium: "300x300", thumb: "100x100" },:storage => :cloudinary, :path => ':id/:style/:filename'
+  has_attached_file :avatar, styles: { medium: "300x300", thumb: "100x100" }
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
+
+  has_attached_file :image,:storage => :cloudinary, :path => ':id/:style/:filename'
 
   has_many :friend_requests, dependent: :destroy
   has_many :pending_friends, through: :friend_requests, source: :friend
