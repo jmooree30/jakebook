@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   	@user = current_user
     @post = Post.new
     @posts = current_user.posts.all
+    @comment = Comment.new
   end 
 
   private
@@ -16,5 +17,9 @@ class UsersController < ApplicationController
   def post_params
     params.require(:post).permit(:body)
   end 
-  
+
+  def comment_params
+    params.require(:comment).permit(:body, :name, :post_id)
+  end 
+
 end

@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :friendships, dependent: :destroy
   has_many :friends, through: :friendships
 
-  has_many :posts 
+  has_many :posts, dependent: :destroy
 
   #Removes friend association
   def remove_friend(friend)

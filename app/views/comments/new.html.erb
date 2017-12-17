@@ -1,0 +1,5 @@
+    <%= form_for @comment do |c| %>
+  	<%= c.text_area :body %>
+  	<%= c.hidden_field :id, :value => @post.id %>
+  	<%= c.submit "comment" %>
+  	<% end %>

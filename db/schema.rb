@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171216032846) do
+ActiveRecord::Schema.define(version: 20171216210608) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.bigint "post_id"
+    t.string "name"
+    t.string "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_comments_on_post_id"
+  end
 
   create_table "friend_requests", force: :cascade do |t|
     t.bigint "user_id"
@@ -84,6 +93,7 @@ ActiveRecord::Schema.define(version: 20171216032846) do
     t.index ["voter_type", "voter_id"], name: "index_votes_on_voter_type_and_voter_id"
   end
 
+  add_foreign_key "comments", "posts"
   add_foreign_key "friend_requests", "users"
   add_foreign_key "friendships", "users"
   add_foreign_key "likes", "posts"
