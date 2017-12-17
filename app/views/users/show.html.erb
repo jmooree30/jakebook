@@ -1,6 +1,11 @@
-<br><br>
-<%= form_for @post, :html => { :style => 'width:35%; float:left; margin-top:300px;' } do |f| %>
-<%= f.text_area :body, style: 'width:100%;' %><br>
+<%= image_tag current_user.avatar.url(:medium), style: "float:left; margin-left:20px;" %><br>
+
+
+<%= form_for @post, :html => { :style => 'width:200px; float:left; ' } do |f| %>
+<h3>
+What's on your mind?
+</h3>
+<%= f.text_area :body %><br>
 <%= f.submit "Post" %>
 <% end %>
 
