@@ -1,5 +1,4 @@
-<%= @user.name %><br><br>
-
+<br><br>
 <%= form_for @post, :html => { :style => 'width:35%; float:left; margin-top:300px;' } do |f| %>
 <%= f.text_area :body, style: 'width:100%;' %><br>
 <%= f.submit "Post" %>
@@ -27,8 +26,18 @@
 		<%= form_for @comment do |c| %>
 		<%= c.text_area :body, style: 'height:30px; border-radius:5px; width:75%;' %>
 		<%= c.hidden_field :post_id, :value => post.id %>
+		<%= c.hidden_field :name, :value => current_user.name %>
 		<%= c.submit "comment" %>
 		<% end %>
+		<% @comments.each do |z| %>
+			<% if z.post_id == post.id %>
+			<div class='commentname'>
+			<%= z.name %> commented:
+			</div><br>
+			<div class="commentbody">
+			<%= z.body %></div><br>
+			<% end %>
+		 	<% end %>
 	</div>
 	<p><br><br></p>
 	<% end %>

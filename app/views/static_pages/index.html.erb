@@ -26,6 +26,7 @@
 		<%= form_for @comment do |c| %>
 		<%= c.text_area :body, style: 'height:30px; border-radius:5px; width:75%;' %>
 		<%= c.hidden_field :post_id, :value => post.id %>
+	    <%= c.hidden_field :name, :value => current_user.name %>
 		<%= c.submit "comment" %>
 		<% end %>
 	</div>

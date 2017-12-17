@@ -3,11 +3,9 @@ class CommentsController < ApplicationController
 	def create
 		@comment = Comment.new(comment_params)
 		if @comment.save
-			flash[:notice]="Comment posted."
-			redirect_to root_path
+			redirect_back(fallback_location: root_path)
 		else 
-			flash[:alert]="Error"
-			redirect_to root_path
+			redirect_back(fallback_location: root_path)
 		end
 	end
 
