@@ -6,9 +6,9 @@ class UsersController < ApplicationController
   end
 
   def show 
-  	@user = current_user
+  	@user = User.find(params[:id])
     @post = Post.new
-    @posts = current_user.posts.all.order(created_at: :desc)
+    @posts = @user.posts.all.order(created_at: :desc)
     @comment = Comment.new
     @comments = Comment.all
   end 

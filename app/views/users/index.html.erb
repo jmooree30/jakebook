@@ -3,7 +3,7 @@
   <% @users.each do |f| %>
   <% if f.id == user.user.id %>
   <ul>
-    New friend requests
+   <h1> New friend requests </h1>
   <li>
     <%= f.name %>
     <%= link_to "Accept request", friend_request_path(id: user), :method => :put %>
@@ -13,14 +13,13 @@
   <% end %>
 </ul>
 
-<ul>
-	All users
+	<h1>All users</h1>
   <% @users.each do |user| %>
   <% if user.id != current_user.id %>
-  <li>
-    <%= user.name %>
+  
+    <%= image_tag user.avatar.url(:thumb) %><br>
+    <%= link_to user.name, user_path(id: user) %> |
  <%= link_to "Add Friend", friend_requests_path(:friend_id => user), method: :post %></li>
-</li>
+<br><br>
    <% end %>
    <% end %>
- </ul>

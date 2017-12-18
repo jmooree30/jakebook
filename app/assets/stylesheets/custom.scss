@@ -3,17 +3,26 @@
 
 .panel-default{
 	width:40%;
-	margin-right:200px;
+	margin-right:175px;
 	margin-bottom:20px;
 	border-color:linear-gradient(white, #D3D8E8);;
+}
+.panel-header{
+	width:70%;
+	margin-left:200px;
 }
 
 .name{
 	text-align:left;
-	font-size:20px;
+	font-size:18px;
 	padding-left:20px;
-	padding-top:20px;
+	padding-top:5px;
 	font-color:blue;
+}
+
+.namename{
+	padding-top:20px;
+	font-size:12px;
 }
 
 p{
@@ -37,4 +46,9 @@ p{
 .commentbody{
 	float:left;
 	margin-left:10%;
+}
+
+.avatar{
+	text-align:center;
+	margin-left:42%;
 }

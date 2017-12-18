@@ -3,12 +3,15 @@
 <%= render 'devise/sessions/new' %>
 <%= render 'devise/registrations/new' %>
 <% else %>
-
-    <div class="panel panel-default pull-right" >
+    <h1>News Feed</h1>
+    <div class="panel panel-header" >
 	<% @posts.each do |post| %>
 	<br>
 	<div class='name'>
+		<%= image_tag post.user.avatar.url(:thumb) %>
+		<div class='namename'>
 		<%= post.user.name %> shared:<br><br>
+	</div>
 	</div>
 	<%= post.body %><br>
     <div class='name'>
@@ -24,11 +27,20 @@
 	</div>
 	<div class="panel-footer">
 		<%= form_for @comment do |c| %>
-		<%= c.text_area :body, style: 'height:30px; border-radius:5px; width:75%;' %>
+		<%= c.text_area :body, style: 'height:30px; border-radius:5px; width:25%; float:left;' %>
 		<%= c.hidden_field :post_id, :value => post.id %>
 	    <%= c.hidden_field :name, :value => current_user.name %>
-		<%= c.submit "comment" %>
-		<% end %>
+		<%= c.submit "comment", style: "float:left;" %>
+		<% end %><br><br>
+		<% @comments.each do |z| %>
+			<% if z.post_id == post.id %>
+			<div class='commentname'>
+			<%= z.name %> commented:
+			</div><br>
+			<div class="commentbody">
+			<%= z.body %></div><br>
+			<% end %>
+		 	<% end %>
 	</div>
 	<p><br><br></p>
 	<% end %>

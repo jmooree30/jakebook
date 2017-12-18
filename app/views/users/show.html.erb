@@ -1,4 +1,4 @@
-<%= image_tag current_user.avatar.url(:medium), style: "float:left; margin-left:20px;" %><br>
+<%= image_tag @user.avatar.url(:medium), style: "float:left; margin-left:20px;" %><br>
 
 
 <%= form_for @post, :html => { :style => 'width:200px; float:left; ' } do |f| %>

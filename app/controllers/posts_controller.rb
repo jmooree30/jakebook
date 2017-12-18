@@ -10,10 +10,10 @@ class PostsController < ApplicationController
 		@post = current_user.posts.new(post_params)
 		if @post.save
 			flash[:notice]="Post created."
-			redirect_to user_path(current_user)
+			redirect_back fallback_location: root_path
 		else 
 			flash[:alert]="Post failed"
-			redirect_to user_path(current_user)
+			redirect_back fallback_location: root_path
 		end 
 	end 
 

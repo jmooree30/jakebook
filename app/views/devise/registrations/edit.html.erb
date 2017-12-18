@@ -28,7 +28,9 @@
 
   <div class="field">
     <%= f.label :avatar %><br />
+     <div class="avatar">
     <%= f.file_field :avatar %>
+  </div>
     <% if @user.avatar? %>
       <%= image_tag @user.avatar.url(:thumb) %>
     <% end %>
