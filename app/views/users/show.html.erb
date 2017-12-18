@@ -1,6 +1,6 @@
 <%= image_tag @user.avatar.url(:medium), style: "float:left; margin-left:20px;" %><br>
 
-
+<% if @user.id == current_user.id %>
 <%= form_for @post, :html => { :style => 'width:200px; float:left; ' } do |f| %>
 <h3>
 What's on your mind?
@@ -8,6 +8,8 @@ What's on your mind?
 <%= f.text_area :body %><br>
 <%= f.submit "Post" %>
 <% end %>
+<% end %>
+
     <div class="panel panel-default pull-right" >
 	<% @posts.each do |post| %>
 	<br>
