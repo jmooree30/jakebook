@@ -16,7 +16,6 @@
 	<h1>All users</h1>
   <% @users.each do |user| %>
   <% if user.id != current_user.id %>
-  
     <%= image_tag user.avatar.url(:thumb) %><br>
     <%= link_to user.name, user_path(id: user) %> |
  <%= link_to "Add Friend", friend_requests_path(:friend_id => user), method: :post %></li>

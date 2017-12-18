@@ -6,9 +6,12 @@
 What's on your mind?
 </h3>
 <%= f.text_area :body %><br>
-<%= f.submit "Post" %>
+<%= f.submit "Post" %><br><br>
+<strong>Friends: <%= @user.friends.size %></strong>
 <% end %>
 <% end %>
+
+
 
     <div class="panel panel-default pull-right" >
 	<% @posts.each do |post| %>
