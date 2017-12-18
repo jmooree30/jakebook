@@ -1,25 +1,17 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 # jakebook
+
+This was the final rails project for the <a href='www.theodinproject.com'>odin project</a> rails curriculum.
+
+#Features
+
+Devise user authenticaion:
+![Image Hover Text](/devise.png)
+
+Individual user profile pages:
+![Image Hover Text](/profile.png)
+
+Newsfeed with posts abd comments from all users:
+![Image Hover Text](/newsfeed.png)
+
+Friend requests:
+![Image Hover Text](/requests.png)
