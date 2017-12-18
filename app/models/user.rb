@@ -19,7 +19,7 @@ class User < ApplicationRecord
 
   #Removes friend association
   def remove_friend(friend)
-    current_user.friends.destroy(friend)
+    friends.destroy(friend)
   end
 
 end
