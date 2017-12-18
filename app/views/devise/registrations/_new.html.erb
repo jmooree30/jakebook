@@ -16,6 +16,7 @@
     <% end %><br />
     <%= f.password_field :password, autocomplete: "off", placeholder: "Password", class: "password" %>
     <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Password confirmation", class: "password" %>
+    <h3>Pofile picture</h3>
     <%= f.file_field :avatar %>
     <%= f.submit "Sign up", class: "submit" %>
 <% end %>
