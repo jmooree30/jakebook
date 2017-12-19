@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'omniauth-facebook'
 gem 'paperclip-cloudinary'
 gem 'paperclip'
 gem 'acts_as_votable', '~> 0.10.0'
