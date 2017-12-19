@@ -2,9 +2,17 @@
 
 This was the final rails project for the <a href='www.theodinproject.com'>odin project</a> rails curriculum.
 
-#Features
+*Gems 
+gem 'figaro'
+gem 'omniauth-facebook'
+gem 'paperclip-cloudinary'
+gem 'paperclip'
+gem 'acts_as_votable', '~> 0.10.0'
+gem 'jquery-rails'
+gem 'jquery-turbolinks'
+gem 'bootstrap-sass',          '3.3.7'
 
-Devise user authenticaion:
+Oauth/Devise user authenticaion:
 ![Image Hover Text](/devise.png)
 
 Individual user profile pages:
