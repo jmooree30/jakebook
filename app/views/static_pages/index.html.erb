@@ -43,7 +43,7 @@
                 <div id="<%= post.id %>" class="panel-collapse collapse">
                     <% @comments.each do |z| %>
                     <% if z.post_id == post.id %>
-                    <div class="panel-body"><%= z.name %> Commented: <%= z.body %></div>     
+                    <div class="panel-body"><%=image_tag z.post.user.avatar.url(:thumb) %><%= z.body %></div>     
                     <% end %>
                     <% end %>
                 </div>
