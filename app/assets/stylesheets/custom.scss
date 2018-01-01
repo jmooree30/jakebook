@@ -1,28 +1,40 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+#one{
+ border:1px solid black;
+ margin-bottom:25px;
+ background:white;
+ 
+}
+
 .panel-default{
 	width:40%;
 	margin-right:175px;
-	margin-bottom:20px;
-	border-color:linear-gradient(white, #D3D8E8);;
+  border:none;
 }
+
 .panel-header{
 	width:70%;
 	margin-left:200px;
+  border:none;
+}
+
+.panel-footer{
+  border:none;
 }
 
 .name{
-	text-align:left;
-	font-size:18px;
-	padding-left:20px;
-	padding-top:5px;
-	font-color:blue;
+  text-align:left;
+  font-size:18px;
+  padding-left:20px;
+  padding-top:5px;
+  font-color:blue;
 }
 
 .namename{
-	padding-top:20px;
-	font-size:12px;
+  padding-top:20px;
+  font-size:12px;
 }
 
 p{
