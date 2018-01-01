@@ -1,12 +1,12 @@
 <div class="container">
-  <div class="row">
+  <div id="two" class="row">
     <div class="col-sm-3">
-      <%= image_tag @user.avatar.url(:medium), style: "float:left; margin-left:20px;" %><br>
+      <%= image_tag @user.avatar.url(:medium), style: "float:left;" %><br>
     </div>
     <div class="col-sm-6">
 
       <% if @user.id == current_user.id %>
-      <%= form_for @post, :html => { :style => 'width:200px; float:left; ' } do |f| %>
+      <%= form_for @post do |f| %>
       <h3>
         What's on your mind?
       </h3>
