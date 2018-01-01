@@ -1,9 +1,10 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-3">
+      <%= image_tag @user.avatar.url(:medium), style: "float:left; margin-left:20px;" %><br>
     </div>
     <div class="col-sm-6">
-      <%= image_tag @user.avatar.url(:medium), style: "float:left; margin-left:20px;" %><br>
+
       <% if @user.id == current_user.id %>
       <%= form_for @post, :html => { :style => 'width:200px; float:left; ' } do |f| %>
       <h3>
