@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
 		if @comment.save
 			redirect_back(fallback_location: root_path)
 		else 
+      flash[:notice]="Comment must have content."
 			redirect_back(fallback_location: root_path)
 		end
 	end

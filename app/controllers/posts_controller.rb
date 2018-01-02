@@ -12,7 +12,7 @@ class PostsController < ApplicationController
 			flash[:notice]="Post created."
 			redirect_back fallback_location: root_path
 		else 
-			flash[:alert]="Post failed"
+			flash[:alert]="Post must have content."
 			redirect_back fallback_location: root_path
 		end 
 	end 
